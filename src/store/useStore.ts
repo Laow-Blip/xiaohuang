@@ -33,6 +33,7 @@ interface AppState {
   setSelectedMaterial: (materialId: string | null) => void;
   toggleFavorite: (id: string) => void;
   setShowLoginModal: (show: boolean) => void;
+  setAvatar: (avatar: string) => void;
 }
 
 export const useStore = create<AppState>((set) => ({
@@ -40,7 +41,7 @@ export const useStore = create<AppState>((set) => ({
     id: '1',
     email: 'huangjingyu@example.com',
     name: '黄静宇',
-    avatar: '',
+    avatar: 'https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=beautiful%20young%20woman%20with%20long%20black%20hair%20wearing%20yellow%20shirt%20soft%20lighting%20portrait%20avatar&image_size=square',
     isLoggedIn: true,
   },
   progress: [],
@@ -135,4 +136,8 @@ export const useStore = create<AppState>((set) => ({
   })),
   
   setShowLoginModal: (show) => set({ showLoginModal: show }),
+  
+  setAvatar: (avatar) => set((state) => ({
+    user: { ...state.user, avatar },
+  })),
 }));
