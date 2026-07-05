@@ -37,11 +37,11 @@ interface AppState {
 
 export const useStore = create<AppState>((set) => ({
   user: {
-    id: '',
-    email: '',
-    name: '',
+    id: '1',
+    email: 'huangjingyu@example.com',
+    name: '黄静宇',
     avatar: '',
-    isLoggedIn: false,
+    isLoggedIn: true,
   },
   progress: [],
   wrongQuestions: [],
